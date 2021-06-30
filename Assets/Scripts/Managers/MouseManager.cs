@@ -7,11 +7,8 @@ using System;
 //[System.Serializable]
 //public class EventVector3 : UnityEvent<Vector3> { }
 
-public class MouseManager : MonoBehaviour
+public class MouseManager : Singleton<MouseManager>
 {
-    private static MouseManager _ins;
-    public static MouseManager Ins { get { return _ins; } }
-
     private RaycastHit hitInfo;
     //public EventVector3 onMouseClicked;//拖拽方式,不太好用
     public event Action<Vector3> OnMouseClicked;//注册方式
@@ -24,12 +21,10 @@ public class MouseManager : MonoBehaviour
     public Texture2D targer;
     public Texture2D arrow;
 
-    private void Awake()
+    protected override void Awake()
     {
-        if(_ins == null)
-        {
-            _ins = this;
-        }
+        base.Awake();
+        //DontDestroyOnLoad();
     }
 
     private void Update()
