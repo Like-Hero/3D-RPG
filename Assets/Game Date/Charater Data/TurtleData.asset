@@ -16,3 +16,4 @@ MonoBehaviour:
   currentHealth: 20
   baseDefence: 5
   currentDefence: 5
+  resumeStatsTime: 2

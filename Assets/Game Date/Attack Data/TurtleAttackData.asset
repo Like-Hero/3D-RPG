@@ -18,5 +18,5 @@ MonoBehaviour:
   minDamage: 2
   maxDamage: 4
   criticalMultiplier: 2
-  criticalRate: 0.2
+  criticalRate: 1
   isCritical: 0

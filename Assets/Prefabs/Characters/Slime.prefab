@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sightRange: 8
   isGuard: 0
-  resumeTime: 2
+  resumeStatsTime: 2
   patrolRange: 8
 --- !u!114 &7878552288759814468
 MonoBehaviour:

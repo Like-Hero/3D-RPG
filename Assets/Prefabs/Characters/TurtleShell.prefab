@@ -644,7 +644,7 @@ Animator:
   m_GameObject: {fileID: 8170289640353923090}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 56dd4edec19a3b04195448769c085dfc, type: 3}
-  m_Controller: {fileID: 22100000, guid: ad218d30913889b44a9994be39213af0, type: 2}
+  m_Controller: {fileID: 22100000, guid: 50961e2866d5bc246a8ae9d1088f28c1, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -715,7 +715,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sightRange: 8
   isGuard: 0
-  resumeStatsTime: 2
   patrolRange: 8
 --- !u!65 &8470071621581332190
 BoxCollider:

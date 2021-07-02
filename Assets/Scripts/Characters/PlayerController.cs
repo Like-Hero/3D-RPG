@@ -64,7 +64,6 @@ public class PlayerController : MonoBehaviour
         if(velocity == 1)
         {
             agent.speed = Mathf.Min(Mathf.Lerp(agent.speed, maxSpeed, 0.02f), maxSpeed);
-            print(agent.speed);
         }else if(velocity == -1)
         {
             agent.speed = Mathf.Max(Mathf.Lerp(agent.speed, minSpeed, 0.02f), minSpeed);
@@ -103,7 +102,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
         anim.Play("Blend Tree");
-        agent.isStopped = false;
+        //agent.isStopped = false;
         //如果正在寻找敌人，则打断寻找敌人的协程
         if (moveCoroutine != null)
         {
@@ -167,6 +166,7 @@ public class PlayerController : MonoBehaviour
     }
     private void BreakAttack()
     {
+        if (isDead) return;
         isAttacking = false;
         agent.isStopped = false;
         attackLastCD = attackStats.CoolDown;//打断攻击需要恢复CD

@@ -34,6 +34,11 @@ public class CharacterBaseStats : MonoBehaviour
         get { return characterData == null ? 0 : characterData.currentDefence; }
         set { characterData.currentDefence = Mathf.Max(value, 0); }
     }
+    public float ResumeStatsTime
+    {
+        get { return characterData == null ? 0 : characterData.resumeStatsTime; }
+        set { characterData.resumeStatsTime = Mathf.Max(value, 0); }
+    }
     #endregion
     public void Hurt(AttackStats attackerAttackStats)
     {

@@ -10,5 +10,5 @@ public class CharacterBaseData_SO : ScriptableObject
     public int currentHealth;
     public int baseDefence;
     public int currentDefence;
-
+    public float resumeStatsTime;
 }
