@@ -102,12 +102,13 @@ public class PlayerController : MonoBehaviour
             return;
         }
         anim.Play("Blend Tree");
-        //agent.isStopped = false;
+        agent.isStopped = false;
         //如果正在寻找敌人，则打断寻找敌人的协程
-        if (moveCoroutine != null)
-        {
-            StopCoroutine(moveCoroutine);
-        }
+        //if (moveCoroutine != null)
+        //{
+            //StopCoroutine(moveCoroutine);
+            StopAllCoroutines();
+        //}
         //如果正在攻击，那么需要打断攻击
         if (isAttacking)
         {
@@ -126,6 +127,11 @@ public class PlayerController : MonoBehaviour
         {
             attackTarget = enemy;
             //先移动到敌人位置
+            if (moveCoroutine != null)
+            {
+                StopCoroutine(moveCoroutine);
+                moveCoroutine = null;
+            }
             moveCoroutine = StartCoroutine(MoveToEnemy());
         }
     }
@@ -135,6 +141,7 @@ public class PlayerController : MonoBehaviour
         while (Vector3.Distance(transform.position, attackTarget.transform.position) > attackStats.AttackRange)
         {
             agent.destination = attackTarget.transform.position;
+            //print(Vector3.Distance(transform.position, attackTarget.transform.position));
             yield return null;
         }
         //角色走到敌人之后需要看向敌人才攻击，不然视觉上可能会攻击空气
@@ -146,7 +153,7 @@ public class PlayerController : MonoBehaviour
             attackCoroutine = StartCoroutine(AttackEnemy());
         }
         else
-        {
+        {   
             agent.isStopped = true;
         }
     }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GruntData
   m_EditorClassIdentifier: 
   maxHealth: 50
-  currentHealth: 50
+  currentHealth: 1
   baseDefence: 3
   currentDefence: 3
   resumeStatsTime: 2

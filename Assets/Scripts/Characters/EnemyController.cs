@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
 {
     #region Read from var
     private AttackStats attackStats;
-    private CharacterBaseStats characterBaseStats;
+    protected CharacterBaseStats characterBaseStats;
 
     private NavMeshAgent agent;
     private Collider collider;
@@ -138,7 +138,6 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
         }
         else
         {
-            
             //如果之前的状态不是站桩状态并且不是巡逻状态就恢复之前的状态，不然会一直是GUARD或者PATROL状态
             //保证执行一次
             if (enemyState != EnemyStates.GUARD && enemyState != EnemyStates.PATROL)
@@ -184,6 +183,7 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
     private void Dead()
     {
         agent.radius = 0;
+        agent.isStopped = true;
         collider.enabled = false;
     }
     private void Chase()
@@ -205,13 +205,14 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
         }
         else
         {
-            //有限技能
+            //优先技能攻击
             if (TargetInSkillRange())
             {
+                //print(name + "发起了Skill攻击");
                 anim.SetTrigger("Skill");
-            }
-            else if (TargetInAttackRange())
+            }else if (TargetInAttackRange())
             {
+                //print(name + "发起了Attack攻击");
                 anim.SetTrigger("Attack");
             }
             isAttack = true;
@@ -310,11 +311,11 @@ public class EnemyController : MonoBehaviour, IEndGameObserver
             enemyState = EnemyStates.PATROL;
         }
     }
-    private bool TargetInAttackRange()
+    protected bool TargetInAttackRange()
     {
         return Vector3.Distance(chasePoint.position, transform.position) < attackStats.AttackRange;
     }
-    private bool TargetInSkillRange()
+    protected bool TargetInSkillRange()
     {
         return Vector3.Distance(chasePoint.position, transform.position) < attackStats.SkillRange;
     }

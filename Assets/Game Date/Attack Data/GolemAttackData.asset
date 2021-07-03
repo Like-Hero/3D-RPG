@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dda9762bea2ec74495e407be99f7c54, type: 3}
-  m_Name: TurtleAttackData
+  m_Name: GolemAttackData
   m_EditorClassIdentifier: 
-  attackRange: 1.5
-  skillRange: 0
-  coolDown: 2
-  minDamage: 2
-  maxDamage: 4
+  attackRange: 8
+  skillRange: 4
+  coolDown: 3.5
+  minDamage: 8
+  maxDamage: 10
   criticalMultiplier: 2
   criticalRate: 0.2
   isCritical: 0

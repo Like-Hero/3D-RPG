@@ -9,7 +9,7 @@ public class Grunt : EnemyController
     public float repelForce;
     public void Repel()
     {
-        if (attackTarget != null)
+        if (TargetInSkillRange())
         {
             transform.LookAt(attackTarget.transform);
             Vector3 dir = attackTarget.transform.position - transform.position;

@@ -73,6 +73,10 @@ GameObject:
   - component: {fileID: 7009571304764791683}
   - component: {fileID: 7009571304764791680}
   - component: {fileID: 2859119189942707541}
+  - component: {fileID: 3232987118329565664}
+  - component: {fileID: 4105579717233820739}
+  - component: {fileID: 7016116069250637886}
+  - component: {fileID: 3282765267282757424}
   m_Layer: 9
   m_Name: Polyart_Golem
   m_TagString: Enemy
@@ -106,7 +110,7 @@ Animator:
   m_GameObject: {fileID: 7009571304764791681}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0f2c5202b918687408ac5bc7429a03ea, type: 3}
-  m_Controller: {fileID: 9100000, guid: 64e2ef14a02f69a4b94edbee54ca296a, type: 2}
+  m_Controller: {fileID: 22100000, guid: 71f9788b29427e242af4581d374f1692, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -129,6 +133,70 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!195 &3232987118329565664
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7009571304764791681}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 2
+  m_Acceleration: 100
+  avoidancePriority: 50
+  m_AngularSpeed: 500
+  m_StoppingDistance: 1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 0
+  m_AutoRepath: 1
+  m_Height: 4
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &4105579717233820739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7009571304764791681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01aaf68b8668b24cbcaa2fdf59d9bd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  templateData: {fileID: 11400000, guid: ebc95561e3aeb3a43b642c22badcb3d7, type: 2}
+--- !u!114 &7016116069250637886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7009571304764791681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53972c917e9a944cb20308679568abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  templateData: {fileID: 11400000, guid: c6ae9390e706d0a4c9aa0a673583c7ba, type: 2}
+--- !u!114 &3282765267282757424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7009571304764791681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d3f46ac9490e84d83e173fecd5ccc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sightRange: 8
+  isGuard: 1
+  patrolRange: 0
+  repelForce: 20
 --- !u!1 &7009571304792680488
 GameObject:
   m_ObjectHideFlags: 0
